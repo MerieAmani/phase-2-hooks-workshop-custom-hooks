@@ -29,8 +29,8 @@ describe("Exercise 04", () => {
       setState(newValue);
     });
 
-    expect(localStorage.setItem).toHaveBeenLastCalledWith("test", newValue);
-    expect(localStorage.__STORE__["test"]).toBe(newValue);
+    expect(localStorage.setItem).toHaveBeenLastCalledWith("test", JSON.stringify(newValue));
+    expect(localStorage.__STORE__["test"]).toBe(JSON.stringify(newValue));
     expect(result.current[0]).toBe(newValue);
   });
 });
